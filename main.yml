@@ -22,7 +22,8 @@
     # Ensure Ansible is installed via pip
     ansible_install_method: pip
 
-    omz_install_script_location: "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
+    omz_git_repository: "https://github.com/ohmyzsh/ohmyzsh.git"
+    omz_install_path: ~/.oh-my-zsh
 
   roles:
     - elliotweiser.osx-command-line-tools
@@ -30,20 +31,26 @@
     - geerlingguy.mac.homebrew
 
   tasks:
-    - name: Install Oh My Zsh
-      command: sh -c "$(curl -fsSL {{ omz_install_script_location }} )" "" --unattended
-      register: omzinstall
-      changed_when: omzinstall.rc != 0
-    - name: Run App Store role
+    # https://github.com/ohmyzsh/ohmyzsh#manual-installation
+    - name: Clone Oh My ZSH repo.
+      git:
+        repo: "{{ omz_git_repository }}"
+        dest: "{{ omz_install_path }}"
+        update: true
+        accept_hostkey: true
+        version: "master"
+    - name: Make default shell zsh
+      command: chsh -s $(which zsh)
+    - name: Run App Store role.
       include_role:
         name: geerlingguy.mac.mas
-    - name: Run Dotfile role
+    - name: Run Dotfile role.
       include_role:
         name: geerlingguy.dotfiles
-    - name: Run Mac Dock role
+    - name: Run Mac Dock role.
       include_role:
         name: geerlingguy.mac.dock
-    - name: Ensure an SSH key exists
+    - name: Ensure an SSH key exists.
       openssh_keypair:
         path: "~/.ssh/id_ed25519"
         type: ed25519

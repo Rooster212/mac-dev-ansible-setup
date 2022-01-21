@@ -4,6 +4,7 @@ exclude_paths:
 use_default_rules: true
 skip_list:
   - package-latest
+  - no-changed-when
 enable_list:
   - no-log-password  # opt-in
   - no-same-owner  # opt-in
