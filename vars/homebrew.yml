@@ -20,7 +20,7 @@ homebrew_installed_packages:
   - pv
   - wget
   - wrk
-  - ytdlp
+  - yt-dlp
   - zsh-history-substring-search
 
 homebrew_taps:

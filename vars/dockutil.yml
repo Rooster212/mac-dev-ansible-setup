@@ -16,7 +16,7 @@ dockitems_remove:
   - Maps
   - Mail
   - Messages
-dockitems_persist: []
-# - name: "Sublime Text"
-#   path: "/Applications/Sublime Text.app/"
-#   pos: 5
+dockitems_persist:
+  - name: "iTerm"
+    path: "/Applications/iTerm.app/"
+    pos: 10
