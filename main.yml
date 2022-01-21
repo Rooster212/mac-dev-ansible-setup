@@ -32,19 +32,9 @@
     - geerlingguy.mac.homebrew
 
   tasks:
-    - name: Check if Oh My Zsh is installed.
-      stat:
-        path: "~/.oh-my-zsh"
-      register: ohmyzsh_present
-    - name: Download Oh My Zsh script.
-      get_url: 
-        url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-        dest: "{{ setup_dir }}/install-oh-my-zsh.sh"
-        mode: 0744
-      when: not ohmyzsh_present.stat.exists
-    - name: Run Oh My Zsh script in unattended mode.
-      command: 'sh {{ setup_dir }}/install-oh-my-zsh.sh "" --unattended'
-      when: not ohmyzsh_present.stat.exists
+    - include_tasks: tasks/terminal.yml
+      tags:
+        - terminal
 
     - name: Run Dotfile role.
       include_role:
@@ -56,3 +46,7 @@
       openssh_keypair:
         path: "~/.ssh/id_ed25519"
         type: ed25519
+
+    - include_tasks: tasks/rosetta.yml
+      tags:
+        - rosetta

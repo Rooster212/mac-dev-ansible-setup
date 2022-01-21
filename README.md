@@ -39,3 +39,10 @@ Then when I re-run I can just run `ansible-playbook -i inventory main.yml -K`.
 * Mac roles collection from @geerlingguy: https://galaxy.ansible.com/geerlingguy/mac
 * Dotfiles installation role from @geerlingguy: https://galaxy.ansible.com/geerlingguy/dotfiles
 * Ansible role (to install Ansible on the Mac!): https://github.com/geerlingguy/ansible-role-ansible
+
+
+## Manual steps
+
+Some things I can't automate (boo)
+
+* `sudo` TouchID support in iTerm 2 - you need to set `Preferences` -> `Advanced` -> `Allow sessions to survive logging out` to `no`.

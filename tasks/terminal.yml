@@ -1,0 +1,27 @@
+---
+- name: Check if Oh My Zsh is installed.
+  stat:
+    path: "~/.oh-my-zsh"
+  register: ohmyzsh_present
+  tags:
+    - terminal
+- name: Download Oh My Zsh script.
+  get_url: 
+    url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    dest: "{{ setup_dir }}/install-oh-my-zsh.sh"
+    mode: 0744
+  when: not ohmyzsh_present.stat.exists
+  tags:
+    - terminal
+- name: Run Oh My Zsh script in unattended mode.
+  command: 'sh {{ setup_dir }}/install-oh-my-zsh.sh "" --unattended'
+  when: not ohmyzsh_present.stat.exists
+  tags:
+    - terminal
+# - name: Enable TouchID support for sudo
+#   lineinfile:
+#     path: /etc/pam.d/sudo
+#     line: auth sufficient pam_tid.so
+#     state: present
+  tags:
+    - terminal

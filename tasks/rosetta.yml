@@ -1,0 +1,15 @@
+---
+- name: Check if Rosetta is installed already
+  stat:
+    path: /Library/Apple/usr/share/rosetta/rosetta
+  register: rosetta_enabled
+  when: "ansible_machine == 'arm64'"
+  tags:
+    - rosetta
+- name: Enable Rosetta
+  command: sudo /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+  when: 
+    - "ansible_machine == 'arm64'"
+    - "not rosetta_enabled.stat.exists"
+  tags:
+    - rosetta
