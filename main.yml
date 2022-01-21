@@ -2,6 +2,16 @@
 - hosts: localhost
   connection: local
 
+  vars:
+    osx_script: "~/.osx --no-restart"
+    setup_dir: "~/setup"
+
+    # Ensure Ansible is installed via pip
+    ansible_install_method: pip
+
+    omz_git_repository: "https://github.com/ohmyzsh/ohmyzsh.git"
+    omz_install_path: ~/.oh-my-zsh
+
   vars_files:
     - vars/other-package-managers.yml
     - vars/homebrew.yml
@@ -11,20 +21,10 @@
 
   pre_tasks:
     - name: Ensure folder for setup exists
-      become: false
       file:
-        path: ~/setup/
+        path: "{{ setup_dir }}/"
         state: directory
-        mode: 0777
-
-  vars:
-    osx_script: "~/.osx --no-restart"
-
-    # Ensure Ansible is installed via pip
-    ansible_install_method: pip
-
-    omz_git_repository: "https://github.com/ohmyzsh/ohmyzsh.git"
-    omz_install_path: ~/.oh-my-zsh
+        mode: 0744
 
   roles:
     - elliotweiser.osx-command-line-tools
@@ -32,21 +32,20 @@
     - geerlingguy.mac.homebrew
 
   tasks:
-    # https://github.com/ohmyzsh/ohmyzsh#manual-installation
-    - name: Clone Oh My ZSH repo.
-      git:
-        repo: "{{ omz_git_repository }}"
-        dest: "{{ omz_install_path }}"
-        update: true
-        accept_hostkey: true
-        version: "master"
-    - name: Make Oh My ZSH script executable.
-      file:
-        path: "{{ omz_install_path }}/oh-my-zsh.sh"
+    - name: Check if Oh My Zsh is installed.
+      stat:
+        path: "~/.oh-my-zsh"
+      register: ohmyzsh_present
+    - name: Download Oh My Zsh script.
+      get_url: 
+        url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+        dest: "{{ setup_dir }}/install-oh-my-zsh.sh"
         mode: 0744
-    # - name: Run App Store role.
-    #   include_role:
-    #     name: geerlingguy.mac.mas
+      when: not ohmyzsh_present.stat.exists
+    - name: Run Oh My Zsh script in unattended mode.
+      command: 'sh {{ setup_dir }}/install-oh-my-zsh.sh "" --unattended'
+      when: not ohmyzsh_present.stat.exists
+
     - name: Run Dotfile role.
       include_role:
         name: geerlingguy.dotfiles
