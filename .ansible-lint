@@ -1,0 +1,14 @@
+exclude_paths:
+- .cache/  # implicit unless exclude_paths is defined in config
+- .github/
+use_default_rules: true
+skip_list:
+  - package-latest
+enable_list:
+  - no-log-password  # opt-in
+  - no-same-owner  # opt-in
+warn_list:
+  - skip_this_tag
+  - git-latest
+  - experimental  # experimental is included in the implicit list
+  # - role-name
