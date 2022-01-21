@@ -22,6 +22,7 @@ homebrew_installed_packages:
   - wrk
   - yt-dlp
   - zsh-history-substring-search
+  - zsh-syntax-highlighting
 
 homebrew_taps:
   - homebrew/core

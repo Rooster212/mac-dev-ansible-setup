@@ -40,6 +40,9 @@
         update: true
         accept_hostkey: true
         version: "master"
+    - name: Make Oh My ZSH script executable.
+      file:
+        mode: 0777
     # - name: Run App Store role.
     #   include_role:
     #     name: geerlingguy.mac.mas
