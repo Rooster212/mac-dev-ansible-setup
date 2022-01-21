@@ -43,7 +43,7 @@
     - name: Make Oh My ZSH script executable.
       file:
         path: "{{ omz_install_path }}/oh-my-zsh.sh"
-        mode: 0777
+        mode: 0744
     # - name: Run App Store role.
     #   include_role:
     #     name: geerlingguy.mac.mas

@@ -17,6 +17,24 @@ dockitems_remove:
   - Mail
   - Messages
 dockitems_persist:
+  - name: "Telegram"
+    path: "/Applications/Telegram.app/"
+    pos: 3
+  - name: "Safari"
+    path: "/Applications/Safari.app/"
+    pos: 4
+  - name: "Calendar"
+    path: "/Applications/Calendar.app/"
+    pos: 5
+  - name: "App Store"
+    path: "/Applications/App Store.app/"
+    pos: 5
+  - name: "Visual Studio Code"
+    path: "/Applications/Visual Studio Code.app/"
+    pos: 9
   - name: "iTerm"
     path: "/Applications/iTerm.app/"
     pos: 10
+  - name: "System Preferences"
+    path: "/Applications/System Preferences.app/"
+    pos: 99
