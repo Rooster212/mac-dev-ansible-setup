@@ -19,9 +19,6 @@ dockitems_remove:
 dockitems_persist:
   - name: "Launchpad"
     path: "/Applications/Launchpad.app/"
-    pos: 1
-  - name: "Finder"
-    path: "/Applications/Finder.app/"
     pos: 2
   - name: "Telegram"
     path: "/Applications/Telegram.app/"
