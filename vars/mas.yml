@@ -1,6 +1,23 @@
 ---
-mas_installed_app_ids:
-  - 497799835    # Xcode
+mas_installed_apps:
+  - name: Xcode
+    id: 497799835
+  - name: Magnet
+    id: 441258766
+  - name: Telegram
+    id: 747648890
+
+mas_uninstalled_apps:
+  - name: "iMovie"
+    id: 408981434
+  - name: "Keynote"
+    id: 409183694
+  - name: "Pages"
+    id: 409201541
+  - name: "Numbers"
+    id: 409203825
+  - name: "GarageBand"
+    id: 682658836
 
 # Leaving these blank means that you need to login on the app store before running the script.
 mas_email: ""
