@@ -6,6 +6,7 @@
     - vars/other-package-managers.yml
     - vars/homebrew.yml
     - vars/dockutil.yml
+    - vars/dotfiles.yml
     - vars/mas.yml
 
   pre_tasks:
