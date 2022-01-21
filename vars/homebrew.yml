@@ -37,5 +37,6 @@ homebrew_cask_apps:
   - google-chrome
   - iterm2
   - insomnia
+  - synergy
   - vlc
   - visual-studio-code

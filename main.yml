@@ -39,9 +39,9 @@
         update: true
         accept_hostkey: true
         version: "master"
-    - name: Run App Store role.
-      include_role:
-        name: geerlingguy.mac.mas
+    # - name: Run App Store role.
+    #   include_role:
+    #     name: geerlingguy.mac.mas
     - name: Run Dotfile role.
       include_role:
         name: geerlingguy.dotfiles
