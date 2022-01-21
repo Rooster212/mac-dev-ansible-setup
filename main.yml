@@ -22,22 +22,27 @@
     # Ensure Ansible is installed via pip
     ansible_install_method: pip
 
-    # Disable oh-my-zsh role from creating .zshrc as we copy it with dotfiles role
-    omz_zshrc_create: false
-    omz_install_zsh: false
-    omz_user:
-      - name: jamie
+    omz_install_script_location: "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
 
   roles:
     - elliotweiser.osx-command-line-tools
     - geerlingguy.ansible
     - geerlingguy.mac.homebrew
-    - ctorgalson.oh-my-zsh
-    - geerlingguy.mac.mas
-    - geerlingguy.dotfiles
-    - geerlingguy.mac.dock
 
   tasks:
+    - name: Install Oh My Zsh
+      command: sh -c "$(curl -fsSL {{ omz_install_script_location }} )" "" --unattended
+      register: omzinstall
+      changed_when: omzinstall.rc != 0
+    - name: Run App Store role
+      include_role:
+        name: geerlingguy.mac.mas
+    - name: Run Dotfile role
+      include_role:
+        name: geerlingguy.dotfiles
+    - name: Run Mac Dock role
+      include_role:
+        name: geerlingguy.mac.dock
     - name: Ensure an SSH key exists
       openssh_keypair:
         path: "~/.ssh/id_ed25519"
