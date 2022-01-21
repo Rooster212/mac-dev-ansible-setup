@@ -17,33 +17,42 @@ dockitems_remove:
   - Mail
   - Messages
 dockitems_persist:
+  - name: "Launchpad"
+    path: "/Applications/Launchpad.app/"
+    pos: 1
+  - name: "Finder"
+    path: "/Applications/Finder.app/"
+    pos: 2
   - name: "Telegram"
     path: "/Applications/Telegram.app/"
     pos: 3
+  - name: "Ferdi"
+    path: "/Applications/Ferdi.app/"
+    pos: 4
   - name: "Safari"
     path: "/Applications/Safari.app/"
-    pos: 4
+    pos: 5
   - name: "Calendar"
     path: "/Applications/Calendar.app/"
-    pos: 5
+    pos: 6
   - name: "App Store"
     path: "/Applications/App Store.app/"
-    pos: 5
-  - name: "Authy"
-    path: "/Applications/Authy.app/"
-    pos: 6
+    pos: 7
+  - name: "Authy Desktop"
+    path: "/Applications/Authy Desktop.app/"
+    pos: 8
   - name: "LastPass"
     path: "/Applications/LastPass.app/"
-    pos: 7
+    pos: 9
   - name: "Firefox"
     path: "/Applications/Firefox.app/"
-    pos: 8
+    pos: 10
   - name: "Visual Studio Code"
     path: "/Applications/Visual Studio Code.app/"
-    pos: 9
+    pos: 11
   - name: "iTerm"
     path: "/Applications/iTerm.app/"
-    pos: 10
+    pos: 12
   - name: "System Preferences"
     path: "/Applications/System Preferences.app/"
     pos: 99
