@@ -14,7 +14,7 @@
       file:
         path: ~/setup/
         state: directory
-        mode: 0644
+        mode: 0777
 
   vars:
     osx_script: "~/.osx --no-restart"
