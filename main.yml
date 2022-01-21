@@ -1,26 +1,42 @@
+---
 - hosts: localhost
   connection: local
   gather_facts: false
 
+  vars_files:
+    - vars/other-package-managers.yml
+    - vars/homebrew.yml
+    - vars/dockutil.yml
+    - vars/mas.yml
+
+  pre_tasks:
+    - name: Ensure folder for setup exists
+      become: false
+      file:
+        path: ~/setup/
+        state: directory
+        mode: 0644
+
   vars:
     osx_script: "~/.osx --no-restart"
 
-    mas_installed_app_ids:
-      - 497799835    # Xcode
+    # Ensure Ansible is installed via pip
+    ansible_install_method: pip
 
-    homebrew_installed_packages:
-      - node
-      - nvm
-      - redis
-      - ssh-copy-id
-      - pv
-
-    homebrew_cask_apps:
-      - docker
-      - firefox
-      - google-chrome
-      - vlc
+    # Disable oh-my-zsh role from creating .zshrc as we copy it with dotfiles role
+    omz_zshrc_create: false
 
   roles:
+    - elliotweiser.osx-command-line-tools
+    - geerlingguy.ansible
     - geerlingguy.mac.homebrew
+    - ctorgalson.oh-my-zsh
     - geerlingguy.mac.mas
+    - geerlingguy.dotfiles
+    - geerlingguy.mac.dock
+
+  tasks:
+    - name: Ensure an SSH key exists
+      openssh_keypair:
+        path: "~/.ssh/id_ed25519"
+        type: ed25519

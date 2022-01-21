@@ -1,0 +1,7 @@
+---
+mas_installed_app_ids:
+  - 497799835    # Xcode
+
+# Leaving these blank means that you need to login on the app store before running the script.
+mas_email: ""
+mas_password: ""

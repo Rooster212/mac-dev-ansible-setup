@@ -1,0 +1,22 @@
+---
+configure_dock: true
+dockitems_remove:
+  - TV
+  - Podcasts
+  - Pages
+  - Numbers
+  - Keynote
+  - News
+  - Music
+  - Notes
+  - Reminders
+  - Contacts
+  - FaceTime
+  - Photos
+  - Maps
+  - Mail
+  - Messages
+dockitems_persist: []
+# - name: "Sublime Text"
+#   path: "/Applications/Sublime Text.app/"
+#   pos: 5

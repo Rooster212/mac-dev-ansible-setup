@@ -1,7 +1,9 @@
 ---
 roles:
+  - name: geerlingguy.ansible
   - name: elliotweiser.osx-command-line-tools
   - name: geerlingguy.dotfiles
+  - name: ctorgalson.oh-my-zsh
 
 collections:
   - name: geerlingguy.mac

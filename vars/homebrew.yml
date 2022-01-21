@@ -1,0 +1,41 @@
+---
+homebrew_installed_packages:
+  - autoconf
+  - bash-completion
+  - gettext
+  - git
+  - github/gh/gh
+  - go
+  - gpg
+  - iperf
+  - libevent
+  - mcrypt
+  - nano
+  - nmap
+  - node
+  - nvm
+  - ssh-copy-id
+  - readline
+  - openssl
+  - pv
+  - wget
+  - wrk
+  - ytdlp
+  - zsh-history-substring-search
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - caffeine
+  - dynamodb-local
+  - ferdi
+  - firefox
+  - lastpass
+  - google-chrome
+  - iterm
+  - insomnia
+  - vlc
+  - visual-studio-code
