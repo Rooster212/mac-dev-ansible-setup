@@ -24,6 +24,9 @@
 
     # Disable oh-my-zsh role from creating .zshrc as we copy it with dotfiles role
     omz_zshrc_create: false
+    omz_install_zsh: false
+    omz_user:
+      - name: jamie
 
   roles:
     - elliotweiser.osx-command-line-tools
