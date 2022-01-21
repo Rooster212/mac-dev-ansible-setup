@@ -35,7 +35,7 @@ homebrew_cask_apps:
   - firefox
   - lastpass
   - google-chrome
-  - iterm
+  - iterm2
   - insomnia
   - vlc
   - visual-studio-code
