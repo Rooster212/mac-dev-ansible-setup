@@ -6,13 +6,27 @@ Massive props to Jeff Geerling for teaching me how to use Ansible (with his grea
 
 You need Ansible installed to run this playbook.
 
-I'm running this remotely for the first time, so I did this:
+Before running the first time, I did these steps:
 
   1. First I installed XCode via the App Store. This means I am logged into the App Store, and it avoid issues in the next step.
-  1. On the Mac, ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer).
-  2. Then, ensure you can remotely access your Mac. You can do this through System Preferences > Sharing > tick Remote Login. Or you can run `sudo systemsetup -setremotelogin on` on your CLI.
-  4. I then allowed for passwordless SSH access to the Mac by running `ssh-copy-id jamie@192.168.0.20` (for you this would mean replacing the IP with the correct IP) and using my Mac's password to allow copying of the key.
-  5. Then I can run the playbook by running `ansible-playbook -i inventory_remote -K main.yml` (in my case the `inventory_remote` file contains the local IP to connect to my Mac).
+  1. On the Mac, ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer). This can take a few minutes.
+  1. Then, you need to accept the XCode license agreement. You can do this by running `sudo xcodebuild -license` then reviewing the license and typing `agree` at the end, then pressing enter.
+
+To run remotely:
+  1. Ensure you can remotely access your Mac. You can do this through System Preferences > Sharing > tick Remote Login. Or you can run `sudo systemsetup -setremotelogin on` on your CLI.
+  1. Allow for passwordless SSH access to the Mac by running `ssh-copy-id jamie@192.168.0.20` from your source machine (for you this would mean replacing the IP with the correct IP) and using my Mac's password to allow copying of the key. You could also run with the `-k` flag and enter your password.
+  1. Then I can run the playbook by running `ansible-playbook -i inventory_remote -K main.yml` (in my case the `inventory_remote` file contains the local IP to connect to my Mac).
+
+To run locally first time:
+  1. [Install Ansible](https://docs.ansible.com/ansible/latest/installation_guide/index.html):
+
+     1. Run the following command to add Python 3 to your $PATH: `export PATH="$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:$PATH"`
+     2. Upgrade Pip: `sudo pip3 install --upgrade pip`
+     3. Install Ansible: `pip3 install ansible`
+
+  3. Clone or download this repository to your local drive.
+  4. Run `ansible-galaxy install -r requirements.yml` inside this directory to install required Ansible roles.
+  5. Run `ansible-playbook main.yml --ask-become-pass` inside this directory. Enter your macOS account password when prompted for the 'BECOME' password.
 
 > Note: If some Homebrew commands fail, you might need to agree to Xcode's license or fix some other Brew issue. Run `brew doctor` to see if this is the case.
 
