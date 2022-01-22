@@ -43,7 +43,7 @@
       include_role:
         name: geerlingguy.mac.dock
     - name: Ensure an SSH key exists.
-      openssh_keypair:
+      community.crypto.openssh_keypair:
         path: "~/.ssh/id_ed25519"
         type: ed25519
 
