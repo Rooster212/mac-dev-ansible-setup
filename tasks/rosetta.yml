@@ -8,7 +8,7 @@
     - rosetta
 - name: Enable Rosetta
   command: sudo /usr/sbin/softwareupdate --install-rosetta --agree-to-license
-  when: 
+  when:
     - "ansible_machine == 'arm64'"
     - "not rosetta_enabled.stat.exists"
   tags:

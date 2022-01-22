@@ -1,6 +1,9 @@
+---
 exclude_paths:
 - .cache/  # implicit unless exclude_paths is defined in config
 - .github/
+- roles/
+- .ansible-lint
 use_default_rules: true
 skip_list:
   - package-latest
