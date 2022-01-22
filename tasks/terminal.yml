@@ -18,6 +18,7 @@
   when: not ohmyzsh_present.stat.exists
   tags:
     - terminal
+# https://labbots.com/enabling-touch-id-for-access-on-terminal/
 # - name: Enable TouchID support for sudo
 #   lineinfile:
 #     path: /etc/pam.d/sudo
