@@ -41,6 +41,10 @@ Then when I re-run I can just run `ansible-playbook -i inventory main.yml -K`.
 * Ansible role (to install Ansible on the Mac!): https://github.com/geerlingguy/ansible-role-ansible
 
 
+## Tests
+
+We run an integration test in CI. This was heavily inspired by @geerlingguy's Ansible collection tests (which is used in this repo as well!) - https://github.com/geerlingguy/ansible-collection-mac
+
 ## Manual steps
 
 Some things I can't automate (boo)
