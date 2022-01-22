@@ -7,12 +7,10 @@ name: CI
       - master
   schedule:
     - cron: "0 5 * * 1"  # At 5am every Monday
-env:
-  WORKING_DIR: ansible/mac-dev-playbook
 
 defaults:
   run:
-    working-directory: ${{ env.WORKING_DIR }}
+    working-directory: ansible/mac-dev-playbook
 
 jobs:
   lint:
@@ -22,7 +20,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: ${{ env.WORKING_DIR }}
+          path: ansible/mac-dev-playbook
 
       - name: Set up Python 3.
         uses: actions/setup-python@v2
@@ -43,7 +41,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: ${{ env.WORKING_DIR }}
+          path: ansible/mac-dev-playbook
 
       - name: Uninstall GitHub Actions' built-in Homebrew.
         run: tests/uninstall-homebrew.sh
