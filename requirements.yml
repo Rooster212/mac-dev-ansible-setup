@@ -3,7 +3,6 @@ roles:
   - name: geerlingguy.ansible
   - name: elliotweiser.osx-command-line-tools
   - name: geerlingguy.dotfiles
-  - name: community.crypto.openssh_keypair
 
 collections:
   - name: geerlingguy.mac
