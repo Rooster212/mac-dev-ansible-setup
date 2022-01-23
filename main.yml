@@ -30,25 +30,20 @@
     - elliotweiser.osx-command-line-tools
     - geerlingguy.ansible
     - geerlingguy.mac.homebrew
-    - role: gantsign.visual-studio-code-extensions
-      users:
-        - username: "{{ lookup('env','USER') }}"
-          visual_studio_code_extensions:
-            - golang.go
-            - kddejong.vscode-cfn-lint
-            - redhat.vscode-yaml
-            - tomaciazek.ansible
-            - miguelsolorio.fluent-icons
-            - ms-vscode-remote.remote-ssh
-            - ms-vscode-remote.remote-ssh-edit
-            - ms-vscode-remote.remote-wsl
-            - shardulm94.trailing-spaces
 
   tasks:
-    - include_tasks: tasks/terminal.yml
+    - name: Update pkg_mgr fact after installing Homebrew
+      ansible.builtin.setup:
+        filter:
+          - 'ansible_pkg_mgr'
+    - name: Setup Terminal
+      include_tasks: tasks/terminal.yml
       tags:
         - terminal
-
+    - name: Setup VS Code
+      include_tasks: tasks/vscode.yml
+      tags:
+        - terminal
     - name: Run Dotfile role.
       include_role:
         name: geerlingguy.dotfiles
@@ -62,7 +57,6 @@
       community.crypto.openssh_keypair:
         path: "~/.ssh/id_ed25519"
         type: ed25519
-
     - include_tasks: tasks/rosetta.yml
       tags:
         - rosetta
