@@ -3,7 +3,7 @@
   connection: local
 
   vars:
-    osx_script: "~/.osx --no-restart"
+    osx_script: "~/.osx"
     setup_dir: "~/setup"
 
     # Ensure Ansible is installed via pip
@@ -38,8 +38,6 @@
             - kddejong.vscode-cfn-lint
             - redhat.vscode-yaml
             - tomaciazek.ansible
-            - vscode.docker
-            - vscode.yaml
             - miguelsolorio.fluent-icons
             - ms-vscode-remote.remote-ssh
             - ms-vscode-remote.remote-ssh-edit
@@ -54,6 +52,9 @@
     - name: Run Dotfile role.
       include_role:
         name: geerlingguy.dotfiles
+    - name: Run .osx script
+      command: "sudo sh {{ osx_script }}  --no-restart"
+      changed_when: false
     - name: Run Mac Dock role.
       include_role:
         name: geerlingguy.mac.dock

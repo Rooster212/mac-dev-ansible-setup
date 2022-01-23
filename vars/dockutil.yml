@@ -26,23 +26,23 @@ dockitems_persist:
   - name: "Ferdi"
     path: "/Applications/Ferdi.app/"
     pos: 4
-  - name: "Safari"
-    path: "/Applications/Safari.app/"
-    pos: 5
-  - name: "Calendar"
-    path: "/Applications/Calendar.app/"
-    pos: 6
-  - name: "App Store"
-    path: "/Applications/App Store.app/"
-    pos: 7
-  - name: "Authy Desktop"
-    path: "/Applications/Authy Desktop.app/"
-    pos: 8
-  - name: "LastPass"
-    path: "/Applications/LastPass.app/"
-    pos: 9
   - name: "Firefox"
     path: "/Applications/Firefox.app/"
+    pos: 5
+  - name: "LastPass"
+    path: "/Applications/LastPass.app/"
+    pos: 6
+  - name: "Authy Desktop"
+    path: "/Applications/Authy Desktop.app/"
+    pos: 7
+  - name: "Calendar"
+    path: "/Applications/Calendar.app/"
+    pos: 8
+  - name: "App Store"
+    path: "/Applications/App Store.app/"
+    pos: 9
+  - name: "Microsoft Edge"
+    path: "/Applications/Microsoft Edge.app/"
     pos: 10
   - name: "Visual Studio Code"
     path: "/Applications/Visual Studio Code.app/"
