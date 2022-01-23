@@ -42,6 +42,7 @@ homebrew_cask_apps:
   - iterm2
   - insomnia
   - synergy
+  - menumeters
   - microsoft-edge
   - microsoft-teams
   - vlc
