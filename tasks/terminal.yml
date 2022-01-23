@@ -18,6 +18,16 @@
   when: not ohmyzsh_present.stat.exists
   tags:
     - terminal
+- name: Ensure zsh-autosuggestions is installed
+  git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions.git
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    version: master
+- name: Ensure zsh-completions is installed
+  git:
+    repo: https://github.com/zsh-users/zsh-completions.git
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-completions
+    version: master
 - name: Ensure zsh-syntax-highlighting is installed
   git:
     repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
