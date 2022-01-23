@@ -30,6 +30,21 @@
     - elliotweiser.osx-command-line-tools
     - geerlingguy.ansible
     - geerlingguy.mac.homebrew
+    - role: gantsign.visual-studio-code-extensions
+      users:
+        - username: "{{ lookup('env','USER') }}"
+          visual_studio_code_extensions:
+            - golang.go
+            - kddejong.vscode-cfn-lint
+            - redhat.vscode-yaml
+            - tomaciazek.ansible
+            - vscode.docker
+            - vscode.yaml
+            - miguelsolorio.fluent-icons
+            - ms-vscode-remote.remote-ssh
+            - ms-vscode-remote.remote-ssh-edit
+            - ms-vscode-remote.remote-wsl
+            - shardulm94.trailing-spaces
 
   tasks:
     - include_tasks: tasks/terminal.yml
