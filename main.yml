@@ -3,7 +3,7 @@
   connection: local
 
   vars:
-    osx_script: "~/.osx --no-restart"
+    osx_script: "~/.osx"
     setup_dir: "~/setup"
 
     # Ensure Ansible is installed via pip
@@ -32,13 +32,24 @@
     - geerlingguy.mac.homebrew
 
   tasks:
-    - include_tasks: tasks/terminal.yml
+    - name: Update pkg_mgr fact after installing Homebrew
+      ansible.builtin.setup:
+        filter:
+          - 'ansible_pkg_mgr'
+    - name: Setup Terminal
+      include_tasks: tasks/terminal.yml
       tags:
         - terminal
-
+    - name: Setup VS Code
+      include_tasks: tasks/vscode.yml
+      tags:
+        - terminal
     - name: Run Dotfile role.
       include_role:
         name: geerlingguy.dotfiles
+    - name: Run .osx script
+      command: "sudo sh {{ osx_script }}  --no-restart"
+      changed_when: false
     - name: Run Mac Dock role.
       include_role:
         name: geerlingguy.mac.dock
@@ -46,7 +57,6 @@
       community.crypto.openssh_keypair:
         path: "~/.ssh/id_ed25519"
         type: ed25519
-
     - include_tasks: tasks/rosetta.yml
       tags:
         - rosetta

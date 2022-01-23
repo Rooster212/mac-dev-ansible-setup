@@ -1,0 +1,17 @@
+---
+- name: Ensure wanted VS Code extensions are installed
+  import_role:
+    name: gantsign.visual-studio-code-extensions
+  vars:
+    users:
+      - username: "{{ lookup('env','USER') }}"
+        visual_studio_code_extensions:
+          - golang.go
+          - kddejong.vscode-cfn-lint
+          - redhat.vscode-yaml
+          - tomaciazek.ansible
+          - miguelsolorio.fluent-icons
+          - ms-vscode-remote.remote-ssh
+          - ms-vscode-remote.remote-ssh-edit
+          - ms-vscode-remote.remote-wsl
+          - shardulm94.trailing-spaces
