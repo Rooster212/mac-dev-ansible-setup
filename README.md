@@ -50,3 +50,5 @@ We run an integration test in CI. This was heavily inspired by @geerlingguy's An
 Some things I can't automate (boo)
 
 * `sudo` TouchID support in iTerm 2 - you need to set `Preferences` -> `Advanced` -> `Allow sessions to survive logging out` to `no`.
+* I can't get automated font installing working. I want to use JetBrains Mono anyway so [I downloaded it from the site](https://www.jetbrains.com/lp/mono/). I might be able to fix this with some more work...
+* I had to install Terminal support for VS Code through VS Code itself - In the command pallete (`CMD + Shift + P`) I use the command `Shell Command: Install 'code' command in PATH`. Not sure if there is a way to do that through the terminal instead.

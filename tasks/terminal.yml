@@ -18,6 +18,49 @@
   when: not ohmyzsh_present.stat.exists
   tags:
     - terminal
+
+- name: Ensure Powerline fonts repo is up to date
+  git:
+    repo: 'https://github.com/powerline/fonts.git'
+    dest: "{{ setup_dir }}/powerline_fonts"
+    depth: 1
+  tags:
+    - terminal
+- name: Ensure folder exists for JetBrains Mono
+  file:
+    path: "{{ setup_dir }}/jetbrains_mono/"
+    state: directory
+    mode: 0744
+  tags:
+    - terminal
+- name: Retrieve and unzip JetBrains Mono font
+  ansible.builtin.unarchive:
+    src: https://download.jetbrains.com/fonts/JetBrainsMono-2.242.zip
+    dest: "{{ setup_dir }}/jetbrains_mono"
+    remote_src: yes
+  tags:
+    - terminal
+- name: Debug result
+  debug:
+    msg: "{{ lookup('env','HOME') }}/Library/Fonts"
+  tags:
+    - terminal
+- name: Find JetBrains Mono files to copy
+  find:
+    paths: "{{ setup_dir }}/jetbrains_mono"
+    recurse: true
+    patterns: 
+      - '*.ttf'
+  register: font_files
+  tags:
+    - terminal
+- name: Debug result
+  debug:
+    msg: "{{ font_files }}"
+  with_items: "{{ font_files.files | map(attribute='path') | list}}"
+  tags:
+    - terminal
+# This also doesn't seem to work (due to temporary files perhaps?)
 # https://labbots.com/enabling-touch-id-for-access-on-terminal/
 # - name: Enable TouchID support for sudo
 #   lineinfile:
