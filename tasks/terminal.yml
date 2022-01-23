@@ -18,6 +18,11 @@
   when: not ohmyzsh_present.stat.exists
   tags:
     - terminal
+- name: Ensure zsh-syntax-highlighting is installed
+  git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    version: master
 # https://labbots.com/enabling-touch-id-for-access-on-terminal/
 # - name: Enable TouchID support for sudo
 #   lineinfile:

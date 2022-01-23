@@ -47,3 +47,4 @@ homebrew_cask_apps:
   - vlc
   - visual-studio-code
   - plexamp
+  - openvpn-connect
