@@ -33,6 +33,15 @@
     repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
     dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
     version: master
+
+# https://www.matscloud.com/blog/2020/06/25/how-to-use-aws-cdk-with-aws-sso-profiles/
+- name: Ensure AWS SSO fix file is downloaded
+  get_url:
+    # Clone my fork of the linked Python script
+    url: https://gist.githubusercontent.com/Rooster212/e11f2c9f28ff44d4def8a9cdc5af2a58/raw/59929e42881711b5a0e21d44a7a7267c45820b87/aws_sso.py
+    dest: "~/.aws_sso.py"
+    mode: 0744
+
 # https://labbots.com/enabling-touch-id-for-access-on-terminal/
 # - name: Enable TouchID support for sudo
 #   lineinfile:
