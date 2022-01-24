@@ -47,12 +47,15 @@ dockitems_persist:
   - name: "Microsoft Teams"
     path: "/Applications/Microsoft Teams.app/"
     pos: 11
+  - name: "Microsoft Outlook"
+    path: "/Applications/Microsoft Outlook.app/"
+    pos: 12
   - name: "Visual Studio Code"
     path: "/Applications/Visual Studio Code.app/"
-    pos: 12
+    pos: 13
   - name: "iTerm"
     path: "/Applications/iTerm.app/"
-    pos: 13
+    pos: 14
   - name: "System Preferences"
     path: "/Applications/System Preferences.app/"
     pos: 99

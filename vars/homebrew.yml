@@ -45,6 +45,10 @@ homebrew_cask_apps:
   - menumeters
   - microsoft-edge
   - microsoft-teams
+  - microsoft-excel
+  - microsoft-word
+  - microsoft-outlook
+  - microsoft-powerpoint
   - vlc
   - visual-studio-code
   - plexamp
