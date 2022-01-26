@@ -4,6 +4,7 @@ homebrew_installed_packages:
   - ansible-lint
   - awscli
   - bash-completion
+  - exa
   - gettext
   - git
   - github/gh/gh
@@ -15,10 +16,10 @@ homebrew_installed_packages:
   - nano
   - nmap
   - node
-  - nvm
   - ssh-copy-id
   - readline
   - openssl
+  - podman
   - pv
   - wget
   - wrk

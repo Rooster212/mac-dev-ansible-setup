@@ -37,11 +37,17 @@
         filter:
           - 'ansible_pkg_mgr'
     - name: Setup Terminal
-      include_tasks: tasks/terminal.yml
+      include_tasks:
+        file: tasks/terminal.yml
+        apply:
+          tags: terminal
       tags:
         - terminal
     - name: Setup VS Code
-      include_tasks: tasks/vscode.yml
+      include_tasks:
+        file: tasks/vscode.yml
+        apply:
+          tags: terminal
       tags:
         - terminal
     - name: Run Dotfile role.

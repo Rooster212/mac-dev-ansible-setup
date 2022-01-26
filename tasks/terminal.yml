@@ -3,21 +3,15 @@
   stat:
     path: "~/.oh-my-zsh"
   register: ohmyzsh_present
-  tags:
-    - terminal
 - name: Download Oh My Zsh script.
   get_url:
     url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
     dest: "{{ setup_dir }}/install-oh-my-zsh.sh"
     mode: 0744
   when: not ohmyzsh_present.stat.exists
-  tags:
-    - terminal
 - name: Run Oh My Zsh script in unattended mode.
   command: 'sh {{ setup_dir }}/install-oh-my-zsh.sh "" --unattended'
   when: not ohmyzsh_present.stat.exists
-  tags:
-    - terminal
 - name: Ensure zsh-autosuggestions is installed
   git:
     repo: https://github.com/zsh-users/zsh-autosuggestions.git
@@ -33,12 +27,16 @@
     repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
     dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
     version: master
+- name: Ensure iTerm2 shell integration is installed
+  command: curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
+  args:
+    creates: ~/.iterm2_shell_integration.zsh
 
-- name: Ensure nvm working folder is created
-  file:
-    path: ~/.nvm
-    state: directory
-    mode: 0744
+- name: Ensure nvm is installed
+  git:
+    repo: https://github.com/nvm-sh/nvm.git
+    dest: ~/.nvm
+    version: master
 
 # https://www.matscloud.com/blog/2020/06/25/how-to-use-aws-cdk-with-aws-sso-profiles/
 - name: Ensure AWS SSO fix file is downloaded
