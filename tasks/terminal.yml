@@ -34,6 +34,12 @@
     dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
     version: master
 
+- name: Ensure nvm working folder is created
+  file:
+    path: ~/.nvm
+    state: directory
+    mode: 0744
+
 # https://www.matscloud.com/blog/2020/06/25/how-to-use-aws-cdk-with-aws-sso-profiles/
 - name: Ensure AWS SSO fix file is downloaded
   get_url:

@@ -15,3 +15,4 @@
           - ms-vscode-remote.remote-ssh-edit
           - ms-vscode-remote.remote-wsl
           - shardulm94.trailing-spaces
+          - eamodio.gitlens

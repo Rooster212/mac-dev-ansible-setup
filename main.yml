@@ -57,6 +57,7 @@
       community.crypto.openssh_keypair:
         path: "~/.ssh/id_ed25519"
         type: ed25519
-    - include_tasks: tasks/rosetta.yml
+    - name: Ensure Rosetta is enabled.
+      include_tasks: tasks/rosetta.yml
       tags:
         - rosetta
