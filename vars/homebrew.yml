@@ -10,6 +10,7 @@ homebrew_installed_packages:
   - git
   - github/gh/gh
   - go
+  - golangci-lint
   - gpg
   - iperf
   - libevent
@@ -42,9 +43,8 @@ homebrew_cask_apps:
   - firefox
   - lastpass
   - google-chrome
-  - iterm2
   - insomnia
-  - synergy
+  - iterm2
   - menumeters
   - microsoft-edge
   - microsoft-teams
@@ -52,6 +52,7 @@ homebrew_cask_apps:
   - microsoft-word
   - microsoft-outlook
   - microsoft-powerpoint
+  - microsoft-autoupdate
   - vlc
   - visual-studio-code
   - plexamp
