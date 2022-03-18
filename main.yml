@@ -36,6 +36,9 @@
       ansible.builtin.setup:
         filter:
           - 'ansible_pkg_mgr'
+      # https://docs.brew.sh/FAQ#my-mac-apps-dont-find-homebrew-utilities
+    - name: Ensure Mac apps can access Homebrew apps (fix for Android Studio)
+      command: sudo launchctl config user path "$(brew --prefix)/bin:${PATH}"
     - name: Setup Terminal
       include_tasks:
         file: tasks/terminal.yml
@@ -50,6 +53,7 @@
           tags: terminal
       tags:
         - terminal
+
     - name: Run Dotfile role.
       include_role:
         name: geerlingguy.dotfiles

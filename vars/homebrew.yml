@@ -1,6 +1,7 @@
 ---
 homebrew_installed_packages:
   - autoconf
+  - openjdk
   - ansible-lint
   - awscli
   - bash-completion
@@ -34,6 +35,7 @@ homebrew_taps:
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - authy
+  - android-studio
   - caffeine
   - dynamodb-local
   - ferdi
