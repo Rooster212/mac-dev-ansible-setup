@@ -5,6 +5,7 @@ homebrew_installed_packages:
   - ansible-lint
   - awscli
   - bash-completion
+  - dockutil
   - exa
   - gettext
   - git
@@ -39,9 +40,8 @@ homebrew_cask_apps:
   - android-studio
   - caffeine
   - dynamodb-local
-  - ferdi
-  - firefox
-  - lastpass
+  # - firefox
+  # - lastpass
   - google-chrome
   - insomnia
   - iterm2
@@ -52,7 +52,6 @@ homebrew_cask_apps:
   - microsoft-word
   - microsoft-outlook
   - microsoft-powerpoint
-  - microsoft-autoupdate
   - vlc
   - visual-studio-code
   - plexamp

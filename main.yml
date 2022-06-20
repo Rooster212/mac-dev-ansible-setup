@@ -25,6 +25,10 @@
         path: "{{ setup_dir }}/"
         state: directory
         mode: 0744
+    - name: Ensure Rosetta is enabled.  # We do this near the start as some Homebrew packages require Rosetta
+      include_tasks: tasks/rosetta.yml
+      tags:
+        - rosetta
 
   roles:
     - elliotweiser.osx-command-line-tools
@@ -67,7 +71,3 @@
       community.crypto.openssh_keypair:
         path: "~/.ssh/id_ed25519"
         type: ed25519
-    - name: Ensure Rosetta is enabled.
-      include_tasks: tasks/rosetta.yml
-      tags:
-        - rosetta

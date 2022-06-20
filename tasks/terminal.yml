@@ -27,10 +27,14 @@
     repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
     dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
     version: master
-- name: Ensure iTerm2 shell integration is installed
-  command: curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
-  args:
-    creates: ~/.iterm2_shell_integration.zsh
+- name: Download iTerm2 shell integration script
+  get_url:
+    url: https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh
+    dest: ~/.iterm2_shell_integration.sh
+    mode: 0755
+
+- name: Install iTerm2 shell integration
+  shell: ~/.iterm2_shell_integration.sh
 
 - name: Ensure nvm is installed
   git:

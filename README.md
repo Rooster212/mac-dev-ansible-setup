@@ -50,3 +50,4 @@ We run an integration test in CI. This was heavily inspired by @geerlingguy's An
 Some things I can't automate (boo)
 
 * `sudo` TouchID support in iTerm 2 - you need to set `Preferences` -> `Advanced` -> `Allow sessions to survive logging out` to `no`.
+* `dockutil` formula installed via Brew is currently broken (Python issues I think). I fixed this by installing a cask version that someone else has compiled. This fix is detailed here: https://github.com/kcrawford/dockutil/issues/127
