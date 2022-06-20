@@ -34,7 +34,7 @@
     mode: 0755
 
 - name: Install iTerm2 shell integration
-  shell: ~/.iterm2_shell_integration.sh
+  command: ~/.iterm2_shell_integration.sh
 
 - name: Ensure nvm is installed
   git:

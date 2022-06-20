@@ -9,6 +9,7 @@ skip_list:
   - package-latest
   - no-changed-when
   - command-instead-of-module
+  - fqcn-builtins
 enable_list:
   - no-log-password  # opt-in
   - no-same-owner  # opt-in

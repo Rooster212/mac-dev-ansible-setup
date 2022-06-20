@@ -31,7 +31,7 @@ jobs:
         run: pip3 install yamllint ansible-core ansible-lint
 
       - name: Lint code.
-        run: ansible-lint
+        run: ansible-lint -c .ansible-lint
 
   integration:
     name: Integration Test
