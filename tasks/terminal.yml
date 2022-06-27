@@ -42,6 +42,9 @@
     dest: ~/.nvm
     version: master
 
+- name: Ensure gh command completion is installed
+  command: gh completion -s zsh > ~/.oh-my-zsh/custom/plugins/zsh-completions/src/_gh
+
 # https://www.matscloud.com/blog/2020/06/25/how-to-use-aws-cdk-with-aws-sso-profiles/
 - name: Ensure AWS SSO fix file is downloaded
   get_url:
