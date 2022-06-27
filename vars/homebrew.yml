@@ -24,6 +24,7 @@ homebrew_installed_packages:
   - openssl
   - podman
   - pv
+  - watch
   - wget
   - wrk
   - yt-dlp
