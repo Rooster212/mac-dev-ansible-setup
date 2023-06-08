@@ -19,6 +19,23 @@
           - ms-vscode-remote.remote-ssh
           - ms-vscode-remote.remote-ssh-edit
           - ms-vscode-remote.remote-wsl
+          - ms-vscode-remote.remote-containers
           - shardulm94.trailing-spaces
           - amodio.tsl-problem-matcher
           - hediet.vscode-drawio
+          - ryanluker.vscode-coverage-gutters
+          - ms-azuretools.vscode-docker
+          - HyunKyunMoon.gzipdecompressor
+          - ms-python.isort
+          - MariusAlchimavicius.json-to-ts
+          - ms-vscode.live-server
+          - 42Crunch.vscode-openapi
+          - ms-python.vscode-pylance
+          - ms-python.python
+          - Arjun.swagger-viewer
+          - redhat.ansible
+          - amazonwebservices.aws-toolkit-vscode
+          - streetsidesoftware.code-spell-checker
+          - github.vscode-github-actions
+          - Orta.vscode-jest
+          - redhat.vscode-yaml

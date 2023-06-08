@@ -36,11 +36,11 @@
 - name: Install iTerm2 shell integration
   command: ~/.iterm2_shell_integration.sh
 
-- name: Ensure nvm is installed
-  git:
-    repo: https://github.com/nvm-sh/nvm.git
-    dest: ~/.nvm
-    version: master
+- name: Install nvm
+  ansible.builtin.shell: >
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+  args:
+    creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
 
 - name: Ensure gh command completion is installed
   command: gh completion -s zsh > ~/.oh-my-zsh/custom/plugins/zsh-completions/src/_gh
@@ -49,10 +49,9 @@
 - name: Ensure AWS SSO fix file is downloaded
   get_url:
     # Clone my fork of the linked Python script
-    url: https://gist.githubusercontent.com/Rooster212/e11f2c9f28ff44d4def8a9cdc5af2a58/raw/59929e42881711b5a0e21d44a7a7267c45820b87/aws_sso.py
+    url: https://gist.githubusercontent.com/Rooster212/e11f2c9f28ff44d4def8a9cdc5af2a58/raw/417281160442fc4ebad2dc64cffcd6c5892d26e3/aws_sso.py
     dest: "~/.aws_sso.py"
     mode: 0744
-
 # https://labbots.com/enabling-touch-id-for-access-on-terminal/
 # - name: Enable TouchID support for sudo
 #   lineinfile:

@@ -42,7 +42,6 @@ homebrew_cask_apps:
   - caffeine
   - dynamodb-local
   # - firefox
-  # - lastpass
   - google-chrome
   - insomnia
   - iterm2
