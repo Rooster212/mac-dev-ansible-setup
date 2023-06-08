@@ -24,6 +24,7 @@ homebrew_installed_packages:
   - openssl
   - podman
   - pv
+  - pyenv
   - watch
   - wget
   - wrk
@@ -37,11 +38,14 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - 1password
+  - 1password-cli
   - authy
   - android-studio
   - caffeine
   - dynamodb-local
-  # - firefox
+  - docker
+  - firefox
   - google-chrome
   - insomnia
   - iterm2
