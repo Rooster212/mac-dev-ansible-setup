@@ -1,6 +1,7 @@
 ---
 roles:
   - name: geerlingguy.ansible
+  - name: geerlingguy.pip
   - name: elliotweiser.osx-command-line-tools
   - name: geerlingguy.dotfiles
   - name: gantsign.visual-studio-code-extensions
