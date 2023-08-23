@@ -12,10 +12,6 @@
     omz_git_repository: "https://github.com/ohmyzsh/ohmyzsh.git"
     omz_install_path: ~/.oh-my-zsh
 
-    ansible_install_method: pip
-    ansible_install_version_pip: "2.7.0"
-    ansible_install_pip_extra_args: "--user"
-
   vars_files:
     - vars/other-package-managers.yml
     - vars/homebrew.yml
@@ -36,7 +32,6 @@
 
   roles:
     - elliotweiser.osx-command-line-tools
-    - geerlingguy.pip
     - geerlingguy.ansible
     - geerlingguy.mac.homebrew
 
