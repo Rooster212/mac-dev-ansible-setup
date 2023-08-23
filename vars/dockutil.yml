@@ -17,6 +17,7 @@ dockitems_remove:
   - Mail
   - Messages
   - Safari
+  - Freeform
 dockitems_persist:
   - name: "Launchpad"
     path: "/Applications/Launchpad.app/"
@@ -27,8 +28,8 @@ dockitems_persist:
   - name: "Firefox"
     path: "/Applications/Firefox.app/"
     pos: 5
-  - name: "LastPass"
-    path: "/Applications/LastPass.app/"
+  - name: "1Password"
+    path: "/Applications/1Password.app/"
     pos: 6
   - name: "Authy Desktop"
     path: "/Applications/Authy Desktop.app/"
@@ -57,6 +58,6 @@ dockitems_persist:
   - name: "Firefox"
     path: "/Applications/Firefox.app/"
     pos: 20
-  - name: "System Preferences"
-    path: "/Applications/System Preferences.app/"
+  - name: "System Settings"
+    path: "/Applications/System Settings.app/"
     pos: 99
