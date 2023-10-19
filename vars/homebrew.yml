@@ -47,7 +47,7 @@ homebrew_cask_apps:
   - docker
   - firefox
   - google-chrome
-  - insomnia
+  # - insomnia
   - iterm2
   - menumeters
   - microsoft-edge
