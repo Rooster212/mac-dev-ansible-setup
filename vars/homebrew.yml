@@ -40,16 +40,16 @@ homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - 1password
   - 1password-cli
-  - authy
-  - android-studio
-  - caffeine
+  - caffeine        # Keep system awake
+  - cyberduck
   - dynamodb-local
   - docker
   - firefox
   - google-chrome
-  - insomnia
-  - iterm2
-  - menumeters
+  - insomnium       # EOL, but still good for now
+  - iterm2          # Better console
+  - marta           # Alt file browser
+  - menumeters      # System stats
   - microsoft-edge
   - microsoft-teams
   - microsoft-excel
@@ -59,4 +59,4 @@ homebrew_cask_apps:
   - vlc
   - visual-studio-code
   - plexamp
-  - openvpn-connect
+  - postman

@@ -25,15 +25,9 @@ dockitems_persist:
   - name: "Telegram"
     path: "/Applications/Telegram.app/"
     pos: 3
-  - name: "Firefox"
-    path: "/Applications/Firefox.app/"
-    pos: 5
   - name: "1Password"
     path: "/Applications/1Password.app/"
     pos: 6
-  - name: "Authy Desktop"
-    path: "/Applications/Authy Desktop.app/"
-    pos: 7
   - name: "Calendar"
     path: "/Applications/Calendar.app/"
     pos: 8

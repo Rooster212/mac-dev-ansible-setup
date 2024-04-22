@@ -2,10 +2,14 @@
 mas_installed_apps:
   - name: Xcode
     id: 497799835
-  - name: Magnet
+  - name: Magnet # Organises windows, similar to Windows snap functionality
     id: 441258766
   - name: Telegram
     id: 747648890
+  - name: Wireguard
+    id: 1451685025
+  - name: BBEdit # Great text editor for really large files
+    id: 404009241
 
 mas_uninstalled_apps:
   - name: "iMovie"
