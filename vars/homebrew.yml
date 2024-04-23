@@ -38,14 +38,15 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - 1password
+  - 1password       # Password manager
   - 1password-cli
   - caffeine        # Keep system awake
-  - cyberduck
+  - cyberduck       # SFTP, S3, other file transfer system
   - dynamodb-local
   - docker
   - firefox
   - google-chrome
+  - handbrake       # Video transcoder
   - insomnium       # EOL, but still good for now
   - iterm2          # Better console
   - marta           # Alt file browser
@@ -56,7 +57,7 @@ homebrew_cask_apps:
   - microsoft-word
   - microsoft-outlook
   - microsoft-powerpoint
-  - vlc
+  - vlc             # The only video player you'll ever need
   - visual-studio-code
   - plexamp
   - postman
