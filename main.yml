@@ -12,6 +12,8 @@
     omz_git_repository: "https://github.com/ohmyzsh/ohmyzsh.git"
     omz_install_path: ~/.oh-my-zsh
 
+    ansible_pip_executable: /opt/homebrew/bin/pip3
+
   vars_files:
     - vars/other-package-managers.yml
     - vars/homebrew.yml
