@@ -4,8 +4,8 @@ mas_installed_apps:
     id: 497799835
   - name: Magnet
     id: 441258766
-  - name: Telegram
-    id: 747648890
+  - name: Wireguard
+    id: 1451685025
 
 mas_uninstalled_apps:
   - name: "iMovie"

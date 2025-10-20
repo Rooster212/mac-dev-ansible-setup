@@ -11,6 +11,8 @@ gem_packages: []
 #   state: present # present/absent/latest, default: present
 #   version: "~> 1.15.1" # default: N/A
 npm_packages: []
+# - name: "@google/clasp"
+#   version: "^2.4.2"
 # - name: webpack
 #   state: present # present/absent/latest, default: present
 #   version: "^2.6" # default: N/A

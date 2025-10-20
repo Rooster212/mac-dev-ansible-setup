@@ -7,6 +7,7 @@ homebrew_installed_packages:
   - bash-completion
   - dockutil
   - exa
+  - ffmpeg
   - gettext
   - git
   - github/gh/gh
@@ -40,15 +41,19 @@ homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - 1password
   - 1password-cli
-  - authy
-  - android-studio
+  - betterdisplay
   - caffeine
+  - chatgpt
+  - cyberduck
+  - displaylink
   - dynamodb-local
   - docker
   - firefox
+  - hiddenbar
+  - httpie
   - google-chrome
-  # - insomnia
   - iterm2
+  - marta
   - menumeters
   - microsoft-edge
   - microsoft-teams
@@ -59,4 +64,5 @@ homebrew_cask_apps:
   - vlc
   - visual-studio-code
   - plexamp
-  - openvpn-connect
+  - plex
+  - responsively

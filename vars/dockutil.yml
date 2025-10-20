@@ -18,28 +18,23 @@ dockitems_remove:
   - Messages
   - Safari
   - Freeform
+  - Telegram
 dockitems_persist:
   - name: "Launchpad"
     path: "/Applications/Launchpad.app/"
     pos: 2
-  - name: "Telegram"
-    path: "/Applications/Telegram.app/"
+  - name: "App Store"
+    path: "/Applications/App Store.app/"
     pos: 3
-  - name: "Firefox"
-    path: "/Applications/Firefox.app/"
+  - name: "Microsoft Edge"
+    path: "/Applications/Microsoft Edge.app/"
     pos: 5
   - name: "1Password"
     path: "/Applications/1Password.app/"
     pos: 6
-  - name: "Authy Desktop"
-    path: "/Applications/Authy Desktop.app/"
-    pos: 7
   - name: "Calendar"
     path: "/Applications/Calendar.app/"
     pos: 8
-  - name: "App Store"
-    path: "/Applications/App Store.app/"
-    pos: 9
   - name: "Google Chrome"
     path: "/Applications/Google Chrome.app/"
     pos: 10
@@ -58,6 +53,9 @@ dockitems_persist:
   - name: "Firefox"
     path: "/Applications/Firefox.app/"
     pos: 20
+  - name: "ChatGPT"
+    path: "/Applications/ChatGPT.app/"
+    pos: 25
   - name: "System Settings"
     path: "/Applications/System Settings.app/"
     pos: 99

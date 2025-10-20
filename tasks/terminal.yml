@@ -45,13 +45,10 @@
 - name: Ensure gh command completion is installed
   command: gh completion -s zsh > ~/.oh-my-zsh/custom/plugins/zsh-completions/src/_gh
 
-# https://www.matscloud.com/blog/2020/06/25/how-to-use-aws-cdk-with-aws-sso-profiles/
-- name: Ensure AWS SSO fix file is downloaded
-  get_url:
-    # Clone my fork of the linked Python script
-    url: https://gist.githubusercontent.com/Rooster212/e11f2c9f28ff44d4def8a9cdc5af2a58/raw/417281160442fc4ebad2dc64cffcd6c5892d26e3/aws_sso.py
-    dest: "~/.aws_sso.py"
-    mode: 0744
+- name: Remove AWS SSO fix file
+  file:
+    path: "~/.aws_sso.py"
+    state: absent
 # https://labbots.com/enabling-touch-id-for-access-on-terminal/
 # - name: Enable TouchID support for sudo
 #   lineinfile:
