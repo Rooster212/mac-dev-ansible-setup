@@ -19,10 +19,8 @@ dockitems_remove:
   - Safari
   - Freeform
   - Telegram
+  - Calendar
 dockitems_persist:
-  - name: "Launchpad"
-    path: "/Applications/Launchpad.app/"
-    pos: 2
   - name: "App Store"
     path: "/Applications/App Store.app/"
     pos: 3
@@ -32,9 +30,6 @@ dockitems_persist:
   - name: "1Password"
     path: "/Applications/1Password.app/"
     pos: 6
-  - name: "Calendar"
-    path: "/Applications/Calendar.app/"
-    pos: 8
   - name: "Google Chrome"
     path: "/Applications/Google Chrome.app/"
     pos: 10

@@ -9,7 +9,7 @@ homebrew_installed_packages:
   - ffmpeg
   - gettext
   - git
-  - github/gh/gh
+#  - github/gh/gh
   - go
   - golangci-lint
   - gpg
@@ -54,11 +54,11 @@ homebrew_cask_apps:
   - microsoft-edge
   - microsoft-teams
   - microsoft-excel
-  - microsoft-word
-  - microsoft-outlook
-  - microsoft-powerpoint
-  - vlc
-  - visual-studio-code
+#  - microsoft-word
+#  - microsoft-outlook
+#  - microsoft-powerpoint
+#  - vlc
+#  - visual-studio-code
   - plexamp
   - plex
   - responsively

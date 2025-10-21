@@ -13,7 +13,6 @@
           - eamodio.gitlens
           - golang.go
           - vespa-dev-works.jestRunIt
-          - ms-vsliveshare.vsliveshare-pack
           - esbenp.prettier-vscode
           - mechatroner.rainbow-csv
           - ms-vscode-remote.remote-ssh
@@ -32,7 +31,6 @@
           - 42Crunch.vscode-openapi
           - ms-python.vscode-pylance
           - ms-python.python
-          - Arjun.swagger-viewer
           - redhat.ansible
           - amazonwebservices.aws-toolkit-vscode
           - streetsidesoftware.code-spell-checker
