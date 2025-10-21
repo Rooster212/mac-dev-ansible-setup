@@ -25,14 +25,15 @@
         path: "{{ setup_dir }}/"
         state: directory
         mode: 0744
-    - name: Ensure Rosetta is enabled. # We do this near the start as some Homebrew packages require Rosetta
-      include_tasks: tasks/rosetta.yml
-      tags:
-        - rosetta
+    # - name: Ensure Rosetta is enabled. # We do this near the start as some Homebrew packages require Rosetta
+    #   include_tasks: tasks/rosetta.yml
+    #   tags:
+    #     - rosetta
 
   roles:
-    - elliotweiser.osx-command-line-tools
-    - geerlingguy.ansible
+    - geerlingguy.dotfiles
+    #   - elliotweiser.osx-command-line-tools
+    #   - geerlingguy.ansible
     - geerlingguy.mac.homebrew
 
   tasks:
@@ -41,8 +42,8 @@
         filter:
           - "ansible_pkg_mgr"
       # https://docs.brew.sh/FAQ#my-mac-apps-dont-find-homebrew-utilities
-    - name: Ensure Mac apps can access Homebrew apps (fix for Android Studio)
-      command: sudo launchctl config user path "$(brew --prefix)/bin:${PATH}"
+    # - name: Ensure Mac apps can access Homebrew apps (fix for Android Studio)
+    #   command: sudo launchctl config user path "$(brew --prefix)/bin:${PATH}"
     - name: Setup Terminal
       include_tasks:
         file: tasks/terminal.yml
@@ -57,10 +58,6 @@
           tags: terminal
       tags:
         - terminal
-
-    - name: Run Dotfile role.
-      include_role:
-        name: geerlingguy.dotfiles
     - name: Run .osx script
       command: "sudo sh {{ osx_script }}  --no-restart"
       changed_when: false
